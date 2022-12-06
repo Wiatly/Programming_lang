@@ -1,4 +1,6 @@
-﻿string? numLine_1 = Console.ReadLine();
+﻿Console.Write("Введите первое число: ");
+string? numLine_1 = Console.ReadLine();
+Console.Write("Введите Второе число: ");
 string? numLine_2 = Console.ReadLine();
 
 if (numLine_1 != null && numLine_2 != null)
