@@ -10,6 +10,7 @@ string ReadData(string msg)
 int[] coordArray(string coordPoint)
 {
     int[] coordinatsDigit = { 0, 0, 0 };
+    // Разделитель - пробел. Можно заменить на запятую, иизменив первый аргумент Split
     string[] coordinats = coordPoint.Split(' ', StringSplitOptions.RemoveEmptyEntries);
     coordinatsDigit[0] = int.Parse(coordinats[0]);
     coordinatsDigit[1] = int.Parse(coordinats[1]);
@@ -25,9 +26,11 @@ coordPoint = ReadData("Введите координаты точки Y, раз�
 int[] coordYArray = coordArray(coordPoint);
 
 // Считаем рассояние
-double Result = Math.Sqrt(Math.Pow((coordXArray[0] - coordYArray[0]), 2) +
+double Result = Math.Round(
+                Math.Sqrt(Math.Pow((coordXArray[0] - coordYArray[0]), 2) +
                           Math.Pow((coordXArray[1] - coordYArray[1]), 2) +
-                          Math.Pow((coordXArray[2] - coordYArray[2]), 2));
+                          Math.Pow((coordXArray[2] - coordYArray[2]), 2))
+                          ,2);
 
 
 Console.WriteLine(Result);
