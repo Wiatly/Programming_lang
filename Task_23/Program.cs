@@ -16,15 +16,17 @@ string[] stringsForReturn(int numberForEvent)
 
     for (int i = 1; i <= numberForEvent; i++)
     {
-// строим строку кубов
+        // строим строку кубов
         LineQubes = LineQubes + i * i * i + "| ";
-// строим разделителей
-        upperString = new string('-', LineQubes.Length - 1);
-// строим значений
+        // строим строку значений
         LineNumbers = LineNumbers + new string(' ', (int)Math.Log10(i * i * i) - (int)Math.Log10(i)) + i + "| ";
 
     }
 
+    // строим строку разделителей
+    upperString = new string('-', LineQubes.Length - 1);
+
+    //возврат значений из метода
     forReturn[0] = upperString;
     forReturn[1] = LineNumbers;
     forReturn[2] = LineQubes;
