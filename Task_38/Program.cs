@@ -1,4 +1,4 @@
-﻿//using System.Linq;
+﻿using System.Linq;
 
 string ReadData(string msg)
 {
@@ -106,28 +106,28 @@ Console.WriteLine("Начальный массив:");
 ArrayPrint(originalArray); // печатаем массив
 Console.WriteLine();
 
-DateTime beginTime=DateTime.Now;
+DateTime beginTime = DateTime.Now;
 int[] workArray = BubbleSort(originalArray); // сортируем массив пузырьком
-DateTime endTime=DateTime.Now;
+DateTime endTime = DateTime.Now;
 Console.WriteLine("Отсортированный пузырьком массив: ");
 ArrayPrint(workArray);// печатаем сортированный массив
-Console.WriteLine($"Время сортировки: {endTime-beginTime}");
+Console.WriteLine($"Время сортировки: {endTime - beginTime}");
 Console.WriteLine();
 
-beginTime=DateTime.Now;
+beginTime = DateTime.Now;
 workArray = InsertSort(originalArray); // сортируем массив вставкой
-endTime=DateTime.Now;
+endTime = DateTime.Now;
 Console.WriteLine("Отсортированный вставкой массив: ");
 ArrayPrint(workArray);// печатаем сортированный массив
-Console.WriteLine($"Время сортировки: {endTime-beginTime}");
+Console.WriteLine($"Время сортировки: {endTime - beginTime}");
 Console.WriteLine();
 
-beginTime=DateTime.Now;
+beginTime = DateTime.Now;
 workArray = CountingSort(originalArray); // сортируем массив подсчетом
-endTime=DateTime.Now;
+endTime = DateTime.Now;
 Console.WriteLine("Отсортированный подсчетом массив: ");
 ArrayPrint(workArray);// печатаем сортированный массив
-Console.WriteLine($"Время сортировки: {endTime-beginTime}");
+Console.WriteLine($"Время сортировки: {endTime - beginTime}");
 Console.WriteLine();
 
 
