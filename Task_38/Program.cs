@@ -73,7 +73,7 @@ int[] CountingSort(int[] array)
     int min = array.Min();
 
     int[] count = new int[max - min + 1];
-    int z = 0;
+
 
     for (int i = 0; i < count.Length; i++)
     {
@@ -84,8 +84,10 @@ int[] CountingSort(int[] array)
         count[array[i] - min]++;
     }
 
+    int z = 0;
     for (int i = min; i <= max; i++)
     {
+        
         while (count[i - min]-- > 0)
         {
             array[z] = i;
@@ -103,14 +105,14 @@ Console.WriteLine();
 
 int[] originalArray = ArrayFill(arrayCount, arrayLow, arrayUp); // заполняем массив
 Console.WriteLine("Начальный массив:");
-ArrayPrint(originalArray); // печатаем массив
+//ArrayPrint(originalArray); // печатаем массив
 Console.WriteLine();
 
 DateTime beginTime = DateTime.Now;
 int[] workArray = BubbleSort(originalArray); // сортируем массив пузырьком
 DateTime endTime = DateTime.Now;
 Console.WriteLine("Отсортированный пузырьком массив: ");
-ArrayPrint(workArray);// печатаем сортированный массив
+//ArrayPrint(workArray);// печатаем сортированный массив
 Console.WriteLine($"Время сортировки: {endTime - beginTime}");
 Console.WriteLine();
 
@@ -118,7 +120,7 @@ beginTime = DateTime.Now;
 workArray = InsertSort(originalArray); // сортируем массив вставкой
 endTime = DateTime.Now;
 Console.WriteLine("Отсортированный вставкой массив: ");
-ArrayPrint(workArray);// печатаем сортированный массив
+//ArrayPrint(workArray);// печатаем сортированный массив
 Console.WriteLine($"Время сортировки: {endTime - beginTime}");
 Console.WriteLine();
 
@@ -126,7 +128,7 @@ beginTime = DateTime.Now;
 workArray = CountingSort(originalArray); // сортируем массив подсчетом
 endTime = DateTime.Now;
 Console.WriteLine("Отсортированный подсчетом массив: ");
-ArrayPrint(workArray);// печатаем сортированный массив
+//ArrayPrint(workArray);// печатаем сортированный массив
 Console.WriteLine($"Время сортировки: {endTime - beginTime}");
 Console.WriteLine();
 
